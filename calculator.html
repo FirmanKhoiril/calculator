@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Calculator App</title>
+</head>
+<body>
+    <main class="container">
+        <div class="dark-toggle-container">
+            <input type="checkbox" id="dark-toggle" class="dark-toggle-checkbox">
+            <label for="dark-toggle" class="dark-toggle-label">
+                <span class="dark-toggle-circle"></span>
+            </label>
+            <div class="dark-icon">
+                <img src="./images/moon.png" alt="Moon Icon" width="20" height="20">
+            </div>
+            <div class="light-icon">
+                <img src="./images/sun.png" alt="Sun Icon" width="20" height="20">
+            </div>
+        </div>
+        <div class="result-container">
+            <p id="existingResult" class="text-white"></p>
+            <input id="result" class="text-white" readonly>
+        </div>
+        <div class="calculator-container">
+            <div class="row">
+                <button onclick="allClear()" type="button" class="btn-action btn-dark color-primary" id="AC">
+                    AC
+                </button>
+                <button onclick="addToDisplay('+')" type="button" class="btn-action btn-dark color-primary" id="plus">
+                    +
+                </button>
+                <button onclick="addToDisplay('-')" type="button" class="btn-action btn-dark color-primary" id="minus">
+                    -
+                </button>
+                <button onclick="addToDisplay('*')" type="button" class="btn-action btn-dark color-primary" id="times">
+                    x
+                </button>
+            </div>
+            <div class="row">
+                <button onclick="addToDisplay('1')" type="button" class="btn-action btn-dark" id="one">
+                    1
+                </button>
+                <button onclick="addToDisplay('2')" type="button" class="btn-action btn-dark" id="two">
+                    2
+                </button>
+                <button onclick="addToDisplay('3')" type="button" class="btn-action btn-dark" id="three">
+                    3
+                </button>
+                <button onclick="addToDisplay('/')" type="button" class="btn-action btn-dark color-primary" id="division">
+                    /
+                </button>
+            </div>
+            <div class="row">
+                <button onclick="addToDisplay('4')" type="button" class="btn-action btn-dark" id="four">
+                    4
+                </button>
+                <button onclick="addToDisplay('5')" type="button" class="btn-action btn-dark" id="five">
+                    5
+                </button>
+                <button onclick="addToDisplay('6')" type="button" class="btn-action btn-dark" id="six">
+                    6
+                </button>
+                <button onclick="addToDisplay('.')" type="button" class="btn-action btn-dark color-primary" id="decimal">
+                    .
+                </button>
+            </div>
+            <div class="row">
+                <button onclick="addToDisplay('7')" type="button" class="btn-action btn-dark" id="seven">
+                    7
+                </button>
+                <button onclick="addToDisplay('8')" type="button" class="btn-action btn-dark" id="eight">
+                    8
+                </button>
+                <button onclick="addToDisplay('9')" type="button" class="btn-action btn-dark" id="nine">
+                    9
+                </button>
+                <button onclick="addToDisplay('0')" type="button" class="btn-action btn-dark color-primary" id="zero">
+                    0
+                </button>
+            </div>
+            <div class="row">
+                <button onclick="resultEqual('')" type="button" class="btn-equal" id="equal">
+                    =
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
