@@ -63,6 +63,16 @@ const nine = document.getElementById("nine")
 const zero = document.getElementById("zero")
 
 function addToDisplay(input) {
+
+    const operators = ['+', '-', '*', '/'];
+
+    const lastChar = result.value[result.value.length - 1];
+
+    if (operators.includes(lastChar) && operators.includes(input)) {
+        alert("You already entered an operator. Please enter a number before adding another operator.")
+        return;
+    }
+
     if (existingResult) {
         // result.value = "";
         existingResult = false;
