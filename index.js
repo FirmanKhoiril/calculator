@@ -38,7 +38,6 @@
 // graduate("Fulan", 14)
 
 
-let existingResult = false;
 const result = document.getElementById("result");
 const lastResult = document.getElementById("existingResult");
 const darkToogle = document.getElementById("dark-toggle")
@@ -61,28 +60,37 @@ const seven = document.getElementById("seven")
 const eight = document.getElementById("eight")
 const nine = document.getElementById("nine")
 const zero = document.getElementById("zero")
+const toast = document.getElementById("toast")
+const toastMessage = document.getElementById("toast-message")
+
+function showToast (message) {
+    toastMessage.innerText = message;
+    toast.style.opacity = "1";
+    toast.style.transition = "opacity 200ms ease-in-out";
+    setTimeout(() => {
+        toast.style.opacity = "0";
+    }, 3000);
+}
 
 function addToDisplay(input) {
-
     const operators = ['+', '-', '*', '/'];
-
     const lastChar = result.value[result.value.length - 1];
-
+    
     if (operators.includes(lastChar) && operators.includes(input)) {
-        alert("You already entered an operator. Please enter a number before adding another operator.")
+        showToast("You already entered an operator. Please enter a number before adding another operator.")
         return;
     }
 
-    if (existingResult) {
-        // result.value = "";
-        existingResult = false;
+    if(result.value === operators.includes(lastChar)) {
+        showToast("")
+        return
     }
+
     result.value += input;
 }
 
 function allClear() {
     result.value = "";
-    existingResult = false; 
     lastResult.innerHTML = ""
 }
 
@@ -90,7 +98,6 @@ function resultEqual() {
     const evaluatedResult = eval(result.value);
     lastResult.innerHTML = `${result.value}`;
     result.value = evaluatedResult;
-    existingResult = true; 
 }
 
 darkToogle.addEventListener("change", function() {
